@@ -1,0 +1,21 @@
+[package]
+name = "deepl-cli"
+version = "0.1.0"
+authors = ["Keisuke Toyota <hm.pudding0715@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "deepl"
+path = "src/main.rs"
+
+[dependencies]
+seahorse = "1.1"
+surf = "2.2"
+serde = { version = "1.0", features = ["derive"] }
+async-std = { version = "1.9", features = ["attributes"] }
+serde_json = "1.0"
+
+[profile.release]
+opt-level = 3
+codegen-units = 1
+lto = true
