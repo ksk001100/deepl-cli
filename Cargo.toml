@@ -2,6 +2,7 @@
 name = "deepl-cli"
 version = "0.1.0"
 authors = ["Keisuke Toyota <hm.pudding0715@gmail.com>"]
+description = "DeepL CLI"
 edition = "2018"
 
 [[bin]]
