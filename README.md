@@ -17,5 +17,5 @@ Download [here](https://github.com/ksk001100/deepl-cli/releases)
 $ export DEEPL_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 $ deepl --help # => Show help
 $ deepl こんにちは世界 # => Default target language (EN)
-$ deepl Hello world --language EN
+$ deepl Hello world --lang JA
 ```
