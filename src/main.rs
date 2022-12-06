@@ -1,8 +1,8 @@
+use reqwest::{self, Url};
 use seahorse::{App, Context, Flag, FlagType};
 use serde::Deserialize;
 use std::env;
 use std::process::exit;
-use reqwest::{self, Url};
 use tokio::runtime::Runtime;
 
 #[derive(Deserialize, Debug)]
@@ -17,7 +17,11 @@ struct Response {
     translations: Vec<Translation>,
 }
 
-async fn translate<'a>(auth_key: &'a str, text: &'a str, target_lang: &'a str) -> Result<(), Box<dyn std::error::Error>> {
+async fn translate<'a>(
+    auth_key: &'a str,
+    text: &'a str,
+    target_lang: &'a str,
+) -> Result<(), Box<dyn std::error::Error>> {
     let url = Url::parse(&format!(
         "https://api-free.deepl.com/v2/translate?auth_key={}&text={}&target_lang={}",
         auth_key, text, target_lang
